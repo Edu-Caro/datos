@@ -1,0 +1,6 @@
+Nombre   Edad
+Juan     21
+Pedro    22
+Laura    19
+Miguel   20
+Maria    18

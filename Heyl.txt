@@ -1,0 +1,21 @@
+Material    G
+Oro	6.683	
+Platino	6.661
+Vidrio	6.678
+Oro	6.681
+Platino	6.661
+Vidrio	6.671
+Oro	6.676
+Platino	6.667
+Vidrio	6.675
+Oro	6.678
+Platino	6.667
+Vidrio	6.672
+Oro	6.679
+Platino	6.664
+Vidrio	6.674
+Oro	6.672	
+
+
+
+	

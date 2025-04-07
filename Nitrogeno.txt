@@ -1,0 +1,16 @@
+Densidad      Origen
+2.30143	      Comp_N
+2.29816	      Comp_N
+2.30182	      Comp_N
+2.2989	      Comp_N
+2.31017	      Aire
+2.30986	      Aire
+2.3101	      Aire
+2.31001	      Aire
+2.29889	      Comp_N
+2.2994	      Comp_N
+2.29849	      Comp_N
+2.29889	      Comp_N
+2.31024	      Aire
+2.3103	      Aire
+2.31028	      Aire

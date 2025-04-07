@@ -1,0 +1,54 @@
+function (name, pos = -1, envir = as.environment(pos), all.names = FALSE, 
+    pattern) 
+{
+    if (!missing(name)) {
+        nameValue <- try(name, silent = TRUE)
+        if (identical(class(nameValue), "try-error")) {
+            name <- substitute(name)
+            if (!is.character(name)) 
+                name <- deparse(name)
+            warning(sQuote(name), " converted to character string")
+            pos <- name
+        }
+        else pos <- nameValue
+    }
+    all.names <- .Internal(ls(envir, all.names))
+    if (!missing(pattern)) {
+        if ((ll <- length(grep("[", pattern, fixed = TRUE))) && 
+            ll != length(grep("]", pattern, fixed = TRUE))) {
+            if (pattern == "[") {
+                pattern <- "\\["
+                warning("replaced regular expression pattern '[' by  '\\\\['")
+            }
+            else if (length(grep("[^\\\\]\\[<-", pattern))) {
+                pattern <- sub("\\[<-", "\\\\\\[<-", pattern)
+                warning("replaced '[<-' by '\\\\[<-' in regular expression pattern")
+            }
+        }
+        grep(pattern, all.names, value = TRUE)
+    }
+    else all.names
+}
+<environment: namespace:base>
+ [1] "bloque" "calcio" "cont"   "dureza" "factor" "hard"   "ICplot" "lote"  
+ [9] "m"      "punta"  "s"      "t"      "x"      "y"     
+oque, dureza, punta
+ [1] "bloque" "calcio" "cont"   "dureza" "factor" "hard"   "ICplot" "lote"  
+ [9] "m"      "punta"  "s"      "t"      "x"      "y"     
+   dureza punta bloque
+1     9.3     1      1
+2     9.4     1      2
+3     9.6     1      3
+4    10.0     1      4
+5     9.4     2      1
+6     9.3     2      2
+7     9.8     2      3
+8     9.9     2      4
+9     9.2     3      1
+10    9.4     3      2
+11    9.5     3      3
+12    9.7     3      4
+13    9.7     4      1
+14    9.6     4      2
+15   10.0     4      3
+16   10.2     4      4
