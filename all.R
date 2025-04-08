@@ -1,8 +1,19 @@
+# Borrar consola
+cat('\014')  # Este comando limpia la consola en RStudio
+
+# Borrar entorno
 rm(list = ls())
 
+# Mensaje de entorno borrado
+cat("========================\n")
+cat("  Environment borrado.\n") 
+cat("========================\n")
+
+# Cargar funciones
 source("https://raw.githubusercontent.com/javiercara/DisRegETSII/refs/heads/master/R/ICplot.R")
 source("https://raw.githubusercontent.com/javiercara/DisRegETSII/refs/heads/master/R/interIC.R")
 
+# Cargar datos
 notas = read.table('https://raw.githubusercontent.com/Edu-Caro/datos/refs/heads/main/notas.txt', header = TRUE)
 rendimiento = read.table('https://raw.githubusercontent.com/Edu-Caro/datos/refs/heads/main/DdE8.txt', header = TRUE)
 
