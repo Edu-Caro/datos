@@ -30,10 +30,10 @@ if (exists("ICplot") && exists("interIC") && exists("notas") && exists("rendimie
 cat("=================================\n")
 
 # Vista previa de los datos cargados
-cat("---------------------------------\n")
 cat("\nVista previa de los datos 'notas':\n")
-print(head(notas))
 cat("---------------------------------\n")
+print(head(notas)) 
 cat("\nVista previa de los datos 'rendimiento':\n")
+cat("---------------------------------\n")
 print(head(rendimiento))
 cat("---------------------------------\n")
