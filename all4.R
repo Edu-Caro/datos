@@ -20,7 +20,7 @@ bbdd_nombres <- c(
   "pinosycerezos", "pintura", "possum", "prestige", "prod", "quimico", "radon",
   "renta", "students", "tabaco", "tuffts", "venenos", "huella")
 
-bbdd_nombres <- c('cars', 'fev', 'madrid_2021', 'SEOUL1988')
+bbdd_nombres <- c('cars', 'fev', 'madrid_2021', 'SEOUL1988', 'huella')
 
 bbdd_nombres <- sub("\\.txt$", "", bbdd_nombres)
 
