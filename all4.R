@@ -18,7 +18,7 @@ bbdd_nombres <- c(
   "coches", "coches2", "datos", "demog", "desint", "drug", "espesor",
   "experimento", "fev", "fluorita", "forbes", "fotos", "gafas", "gsi", "iq", "madrid_2021", "peso", "pima", "pinos",
   "pinosycerezos", "pintura", "possum", "prestige", "prod", "quimico", "radon",
-  "renta", "students", "tabaco", "tuffts", "venenos")
+  "renta", "students", "tabaco", "tuffts", "venenos", "huella")
 
 bbdd_nombres <- c('cars', 'fev', 'madrid_2021', 'SEOUL1988')
 
