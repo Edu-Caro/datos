@@ -10,7 +10,7 @@ cat("  Environment borrado.\n")
 #===============================================================================
 #===============================================================================
 bbdd_nombres <- c(
-  "Alumnos", "Alumnos_cabecera", "CUERPO", "Calles", "Cavendish", "Centeno", "DdE8",
+  "Alumnos", "Alumnos_cabecera", "cuerpo", "Calles", "Cavendish", "Centeno", "DdE8",
   "Forbes2000", "Heyl", "MWE_nord", "Michelson_Newcomb", "Nitrogeno", "NotasTFM",
   "Oldfaithful", "Olimpiada", "Prueba", "SEOUL1988", "SEOUL1988_comma", "SEOUL_NAMES",
   "Termometros", "Tryptone.dat", "USAcrime", "USAcrime_comma", "aditivos",
@@ -20,7 +20,7 @@ bbdd_nombres <- c(
   "pinosycerezos", "pintura", "possum", "prestige", "prod", "quimico", "radon",
   "renta", "students", "tabaco", "tuffts", "venenos", "huella")
 
-bbdd_nombres <- c('cars', 'fev', 'madrid_2021', 'SEOUL1988', 'huella')
+bbdd_nombres <- c('cars', 'fev', 'madrid_2021', 'SEOUL1988', 'huella', 'cuerpo', 'Centeno', 'aditivos', 'coches', 'espesor', 'fluorita')
 
 bbdd_nombres <- sub("\\.txt$", "", bbdd_nombres)
 
