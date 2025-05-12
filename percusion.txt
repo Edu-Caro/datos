@@ -1,0 +1,17 @@
+VEL	RATIO	FUERZA
+baja	0.15	270
+baja	0.15	278
+baja	0.30	245
+baja	0.30	249
+baja	0.45	260
+baja	0.45	272
+baja	0.60	275
+baja	0.60	286
+alta	0.15	283
+alta	0.15	286
+alta	0.30	285
+alta	0.30	280
+alta	0.45	286
+alta	0.45	287
+alta	0.60	294
+alta	0.60	288
