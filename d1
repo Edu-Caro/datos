@@ -1,0 +1,53 @@
+#===============================================================================
+# Guardar objetos antes de cargar
+objetos_antes <- ls()
+
+#===============================================================================
+#=============================================================================== 
+
+bbdd_nombres <- c(
+  "authorship", "cars", "cerezos", "coches", "craneos", "creditscore", 
+  "csic_1994", "cuerpo", "digits256", "fev", "gastos", "houses", "lirios", 
+  "madrid_2021", "penguins", "salary", "SEOUL1988", "students", "USAcrime", 
+  "wdbc", "wine"
+)
+
+bbdd_nombres <- sub("\\.txt$", "", bbdd_nombres)
+
+#===============================================================================
+#===============================================================================
+
+# Cargar funciones
+# source("https://raw.githubusercontent.com/javiercara/DisRegETSII/refs/heads/master/R/ICplot.R")
+# source("https://raw.githubusercontent.com/javiercara/DisRegETSII/refs/heads/master/R/interIC.R")
+source("https://raw.githubusercontent.com/Edu-Caro/datos/refs/heads/main/prinfact.R")
+
+
+# Cargar datos en bucle usando los nombres para construir las URLs
+for (nombre in bbdd_nombres) {
+  url <- paste0("https://raw.githubusercontent.com/Edu-Caro/datos/refs/heads/main/", nombre, ".txt")
+  assign(nombre, read.table(url, header = TRUE))
+}
+rm(list = c('nombre', 'url'))
+
+#===============================================================================
+if (all(sapply(c(bbdd_nombres), exists))) {
+  cat("\nTodos los objetos necesarios se han cargado correctamente.\n")
+} else {
+  cat("\nAdvertencia: Faltan algunos objetos necesarios en el entorno.\n")
+}
+#===============================================================================
+
+#===============================================================================
+cat("---------------------------------\n")
+cat("\nObjetos cargados:\n")
+
+# Mostrar explícitamente los que este script ha cargado
+objetos_cargados <- c(bbdd_nombres)
+invisible(lapply(objetos_cargados, function(x) cat(paste0(" > ", x, "\n"))))
+
+# Limpiar variables auxiliares
+rm(list = c("bbdd_nombres", "objetos_cargados", "objetos_antes"))
+
+cat("=================================\n")
+#===============================================================================
