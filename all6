@@ -1,28 +1,19 @@
-
+#===============================================================================
+# Guardar objetos antes de cargar
+objetos_antes <- ls()
 
 #===============================================================================
-#===============================================================================
-bbdd_nombres <- c(
-  "Alumnos", "Alumnos_cabecera", "cuerpo", "Calles", "Cavendish", "Centeno", "DdE8",
-  "Forbes2000", "Heyl", "MWE_nord", "Michelson_Newcomb", "Nitrogeno", "NotasTFM",
-  "Oldfaithful", "Olimpiada", "Prueba", "SEOUL1988", "SEOUL1988_comma", "SEOUL_NAMES",
-  "Termometros", "Tryptone.dat", "USAcrime", "USAcrime_comma", "aditivos",
-  "autobus", "battery", "body", "cars", "cerezos",
-  "coches", "coches2", "datos", "demog", "desint", "drug", "espesor",
-  "experimento", "fev", "fluorita", "forbes", "fotos", "gafas", "gsi", "iq", "madrid_2021", "peso", "pima", "pinos",
-  "pinosycerezos", "pintura", "possum", "prestige", "prod", "quimico", "radon",
-  "renta", "students", "tabaco", "tuffts", "venenos", "huella")
+#=============================================================================== 
 
-bbdd_nombres <- c('cars', 'fev', 'madrid_2021', 'SEOUL1988', 'huella', 'cuerpo', 'Centeno', 'aditivos', 'coches', 'espesor', 'fluorita', 'fev11', 'percusion', 'glass')
+bbdd_nombres <- c('cars', 'fev', 'madrid_2021', 'SEOUL1988', 'huella', 'cuerpo', 
+                  'Centeno', 'aditivos', 'coches', 'espesor', 'fluorita', 
+                  'fev11', 'percusion', 'glass')
 
 bbdd_nombres <- sub("\\.txt$", "", bbdd_nombres)
 
 #===============================================================================
 #===============================================================================
 
-
-
-#===============================================================================
 # Cargar funciones
 source("https://raw.githubusercontent.com/javiercara/DisRegETSII/refs/heads/master/R/ICplot.R")
 source("https://raw.githubusercontent.com/javiercara/DisRegETSII/refs/heads/master/R/interIC.R")
@@ -33,7 +24,6 @@ for (nombre in bbdd_nombres) {
   assign(nombre, read.table(url, header = TRUE))
 }
 rm(list = c('nombre', 'url'))
-#===============================================================================
 
 #===============================================================================
 if (all(sapply(c("ICplot", "interIC", bbdd_nombres), exists))) {
@@ -43,10 +33,16 @@ if (all(sapply(c("ICplot", "interIC", bbdd_nombres), exists))) {
 }
 #===============================================================================
 
-
 #===============================================================================
-rm(list = c('bbdd_nombres'))
 cat("---------------------------------\n")
 cat("\nObjetos cargados:\n")
-invisible(lapply(ls(), function(x) cat(paste0(" > ", x, "\n"))))
+
+# Mostrar explícitamente los que este script ha cargado
+objetos_cargados <- c("ICplot", "interIC", bbdd_nombres)
+invisible(lapply(objetos_cargados, function(x) cat(paste0(" > ", x, "\n"))))
+
+# Limpiar variables auxiliares
+rm(list = c("bbdd_nombres", "objetos_cargados", "objetos_antes"))
+
 cat("=================================\n")
+#===============================================================================
