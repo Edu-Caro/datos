@@ -1,0 +1,79 @@
+# Script automático para crear una carpeta, descargar la app desde GitHub,
+# descargar el modelo (si existe) e iniciar la app Shiny.
+#
+# Guardar este fichero como, por ejemplo, setup_y_run_app.R y ejecutarlo en R/RStudio.
+#
+# Nota: el comando shiny::runApp() lanzará la app y bloqueará la consola hasta que la cierres.
+
+# --------- Configuración ---------
+target_dir <- file.path(getwd(), "mnist_app")   # carpeta donde se guardará la app
+app_urls <- c(
+  # URL del script (raw). He incluido dos variantes; se intentará la primera y si falla la segunda.
+  primary_app = "https://raw.githubusercontent.com/Edu-Caro/datos/main/identifica_digito.R",
+  fallback_app = "https://raw.githubusercontent.com/Edu-Caro/datos/refs/heads/main/identifica_digito.R"
+)
+model_url <- "https://raw.githubusercontent.com/Edu-Caro/datos/main/bosque.rds" # modelo remoto (opcional)
+
+# --------- Crear carpeta ---------
+if (!dir.exists(target_dir)) {
+  dir.create(target_dir, recursive = TRUE)
+  message("Creada carpeta: ", target_dir)
+} else {
+  message("Usando carpeta existente: ", target_dir)
+}
+
+# --------- Función ayuda para descargar con manejo de errores ---------
+download_if_possible <- function(url, destfile, mode = "wb", quiet = TRUE) {
+  tryCatch({
+    utils::download.file(url, destfile = destfile, mode = mode, quiet = quiet)
+    TRUE
+  }, error = function(e) {
+    message("Error descargando ", url, ": ", e$message)
+    FALSE
+  }, warning = function(w) {
+    # some servers return warnings instead of errors (e.g. 404)
+    message("Advertencia descargando ", url, ": ", w$message)
+    FALSE
+  })
+}
+
+# --------- Descargar app.R (intenta primary, si falla intenta fallback) ---------
+app_dest <- file.path(target_dir, "app.R")
+ok <- download_if_possible(app_urls["primary_app"], app_dest)
+if (!ok) {
+  message("Intentando URL alternativa para app...")
+  ok2 <- download_if_possible(app_urls["fallback_app"], app_dest)
+  if (!ok2) stop("No se pudo descargar el script de la app desde GitHub. Comprueba la URL o tu conexión.")
+}
+message("Script de la app guardado en: ", app_dest)
+
+# --------- Descargar bosque.rds (opcional) ---------
+model_dest <- file.path(target_dir, "bosque.rds")
+model_ok <- download_if_possible(model_url, model_dest)
+if (model_ok) {
+  message("Modelo descargado en: ", model_dest)
+} else {
+  message("No se pudo descargar bosque.rds desde el repositorio. La app intentará leerlo desde la URL remota o funcionará sin predicción.")
+}
+
+# --------- Instalar paquetes necesarios si faltan ---------
+required_pkgs <- c("shiny", "randomForest")
+installed <- rownames(installed.packages())
+to_install <- setdiff(required_pkgs, installed)
+if (length(to_install) > 0) {
+  message("Instalando paquetes necesarios: ", paste(to_install, collapse = ", "))
+  install.packages(to_install)
+} else {
+  message("Todos los paquetes necesarios ya están instalados.")
+}
+
+# --------- Instrucciones y cambio de directorio ---------
+message("\nListo. Ahora voy a poner el working directory en: ", target_dir)
+setwd(target_dir)
+
+message("Contenido de la carpeta:")
+print(list.files(".", all.files = FALSE))
+
+message("\nEjecutando la app con shiny::runApp('.') ...")
+# Ejecuta la app (esto abrirá la app en el Viewer de RStudio o en el navegador)
+shiny::runApp(".")
