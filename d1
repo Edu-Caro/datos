@@ -18,8 +18,8 @@ bbdd_nombres <- sub("\\.txt$", "", bbdd_nombres)
 #===============================================================================
 
 # Cargar funciones
-# source("https://raw.githubusercontent.com/javiercara/DisRegETSII/refs/heads/master/R/ICplot.R")
-# source("https://raw.githubusercontent.com/javiercara/DisRegETSII/refs/heads/master/R/interIC.R")
+source("https://raw.githubusercontent.com/javiercara/DisRegETSII/refs/heads/master/R/ICplot.R")
+source("https://raw.githubusercontent.com/javiercara/DisRegETSII/refs/heads/master/R/interIC.R")
 source("https://raw.githubusercontent.com/Edu-Caro/datos/refs/heads/main/prinfact.R")
 
 
