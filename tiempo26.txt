@@ -1,62 +1,62 @@
-nombre	tiempo	zona	hermanos
-Gonzalo	5	El_Viso	3
-Carlota	8	Chamberi	1
-Mario	12	El_Viso	2
-Julio	15	Nuevos_Ministerios	3
-Antonio	15	El_Viso	3
-Tomas	16	Salamanca	3
-Miguel	16	Chamberi	3
-Nicolas	18	Cuatro_Caminos	3
-Alvaro	20	Chamberi	3
-Teresa	20	Puerta_de_Hierro	2
-Javier	20	Ciudad_Jardin	3
-Sara	20	Ciudad_Jardin	2
-Lucas	25	Plaza_Castilla	2
-Lucas_Molt	25	Chamartin	3
-Jorge	25	Las_Rozas	1
-Miguel	25	Parque_de_las_avenidas	2
-Patricia	25	gaztambide	2
-Javier_Feu	25	Lista	3
-Ines	25	cuatro_caminos	3
-Diego	25	Pinar_del_rey	3
-Alvaro	25	Mirasierra	6
-Itziar_Martin	25	Ciudad_Jardin	2
-Angela	25	Goya	2
-Alvaro	25	Mirasierra	5
-Fran	25	El_carmen	2
-Max	25	Norte	3
-Daniela	25	Chamartin	2
-Miguel	28	Norte	2
-Juan	28	Ventas	2
-Cai	30	Pinar_de_Chamartin	3
-Hanna	30	Malasana	2
-Pablo	30	Barrio_del_Pilar	2
-Jorge	30	Hortaleza	2
-Marta	30	Centro	2
-David	30	Serrano	2
-Gregorio	30	Ciudad_universitaria	2
-Nico	30	Arturo_Soria	2
-Marta	30	Pinar_de_Chamartin	3
-Maria	30	Salamanca	1
-Andre	34	Retiro	1
-Sofia	35	Penagrande	2
-Alvaro	40	Las_tablas	2
-Sandra	40	Pozuelo	4
-Paula	40	Alcobendas	2
-Jaime	40	Arturo_Soria	2
-Mario	45	Pozuelo_de_Alarcon	5
-Guillermo	45	Pozuelo	3
-Belen	45	Majadahonda	4
-Alvaro	45	Vallecas	2
-Clau	45	Las_tablas	2
-Adrian	45	Alcala_de_Henares	2
-Alvaro	50	Torrelodones	3
-Jaime	50	Las_tablas	4
-AnaV	50	Torrelodones	4
-Gonzalo	50	Montecarmelo	4
-Teresa	55	Majadahonda	1
-Miguel_Esteve	60	Aravaca	7
-Natalia	60	Las_Rozas	2
-Guille	70	Rivas	1
-Patricia	75	Las_Rozas	2
-Mario	20	Salamanca	4
+nombre	tiempo	zona	hermanos	sexo	distancia
+Gonzalo	5	El_Viso	3	hombre	4.0
+Carlota	8	Chamberi	1	mujer	1.2
+Mario	12	El_Viso	2	hombre	4.0
+Julio	15	Nuevos_Ministerios	3	hombre	0.0
+Antonio	15	El_Viso	3	hombre	4.0
+Tomas	16	Salamanca	3	hombre	6.9
+Miguel	16	Chamberi	3	hombre	1.2
+Nicolas	18	Cuatro_Caminos	3	hombre	0.3
+Alvaro	20	Chamberi	3	hombre	1.2
+Teresa	20	Puerta_de_Hierro	2	mujer	12.3
+Javier	20	Ciudad_Jardin	3	hombre	9.8
+Sara	20	Ciudad_Jardin	2	mujer	9.8
+Lucas	25	Plaza_Castilla	2	hombre	1.1
+Lucas_Molt	25	Chamartin	3	hombre	3.4
+Jorge	25	Las_Rozas	1	hombre	19.4
+Miguel	25	Parque_de_las_avenidas	2	hombre	6.3
+Patricia	25	gaztambide	2	mujer	1.5
+Javier_Feu	25	Lista	3	hombre	0.0
+Ines	25	cuatro_caminos	3	mujer	0.3
+Diego	25	Pinar_del_rey	3	hombre	11.6
+Alvaro	25	Mirasierra	6	hombre	12.9
+Itziar_Martin	25	Ciudad_Jardin	2	hombre	9.8
+Angela	25	Goya	2	mujer	6.1
+Alvaro	25	Mirasierra	5	hombre	12.9
+Fran	25	El_carmen	2	hombre	8.8
+Max	25	Norte	3	hombre	2.1
+Daniela	25	Chamartin	2	mujer	3.4
+Miguel	28	Norte	2	hombre	2.1
+Juan	28	Ventas	2	hombre	3.7
+Cai	30	Pinar_de_Chamartin	3	hombre	4.2
+Hanna	30	Malasana	2	mujer	8.6
+Pablo	30	Barrio_del_Pilar	2	hombre	6.5
+Jorge	30	Hortaleza	2	hombre	0.3
+Marta	30	Centro	2	mujer	9.1
+David	30	Serrano	2	hombre	6.4
+Gregorio	30	Ciudad_universitaria	2	hombre	10.3
+Nico	30	Arturo_Soria	2	hombre	2.6
+Marta	30	Pinar_de_Chamartin	3	mujer	4.2
+Maria	30	Salamanca	1	mujer	6.9
+Andre	34	Retiro	1	hombre	8.0
+Sofia	35	Penagrande	2	mujer	14.3
+Alvaro	40	Las_tablas	2	hombre	8.4
+Sandra	40	Pozuelo	4	mujer	16.4
+Paula	40	Alcobendas	2	mujer	9.2
+Jaime	40	Arturo_Soria	2	hombre	2.6
+Mario	45	Pozuelo_de_Alarcon	5	hombre	16.4
+Guillermo	45	Pozuelo	3	hombre	16.4
+Belen	45	Majadahonda	4	mujer	19.0
+Alvaro	45	Vallecas	2	hombre	8.7
+Clau	45	Las_tablas	2	mujer	8.4
+Adrian	45	Alcala_de_Henares	2	hombre	20.4
+Alvaro	50	Torrelodones	3	hombre	21.5
+Jaime	50	Las_tablas	4	hombre	8.4
+AnaV	50	Torrelodones	4	mujer	21.5
+Gonzalo	50	Montecarmelo	4	hombre	13.2
+Teresa	55	Majadahonda	1	mujer	19.0
+Miguel_Esteve	60	Aravaca	7	hombre	20.7
+Natalia	60	Las_Rozas	2	mujer	19.4
+Guille	70	Rivas	1	hombre	16.0
+Patricia	75	Las_Rozas	2	mujer	19.4
+Mario	20	Salamanca	4	hombre	6.9
