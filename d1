@@ -9,7 +9,7 @@ bbdd_nombres <- c(
   "authorship", "cars", "cerezos", "coches", "craneos", "creditscore", "crucigrama", 
   "csic_1994", "cuerpo", "dem",  "digits256", "estaturasETSII", "fev", "gastos", "houses", "lirios", 
   "madrid_2021", "penguins", "salary", "SEOUL1988", "students", "USAcrime", 
-  "wdbc", "wine"
+  "wdbc", "wine", "tiempo26"
 )
 
 bbdd_nombres <- sub("\\.txt$", "", bbdd_nombres)
