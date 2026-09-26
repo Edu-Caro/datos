@@ -1,8 +1,8 @@
 prinfact <- function(x,r=2)
 {
-  k   <- ncol(x) # N?mero de variables
+  k   <- ncol(x) # Numero de variables
   comp=c('Comp 1'); for (i in 2:r) comp = c(comp,paste('Comp', i)) 
-  nam <- c(comp,'communality','uniquiness')
+  nam <- c(comp,'communality','uniqueness')
   sol <- matrix(0,k,r+2) # matriz de correlaciones
   res <- matrix(0,3,r)  # Varianza explicada 
   rownames(sol)<-colnames(x) # Nombre de las variables
